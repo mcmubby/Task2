@@ -1,0 +1,225 @@
+﻿@model Resume.Models.FormModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div asp-validation-summary="All" style="color: red;"></div>
+<!-- preloader
+    ================================================== -->
+<div id="preloader">
+    <div id="loader"></div>
+</div>
+
+
+<!-- hero
+    ================================================== -->
+<section id="hero" class="s-hero target-section">
+
+    <div class="s-hero__bg rellax" data-rellax-speed="-7"></div>
+
+    <div class="row s-hero__content">
+        <div class="column">
+
+            <div class="s-hero__content-about">
+
+                <h5 style="color: #f06000;">Hello, World.</h5>
+                <h1>I'm Mubarak</h1>
+                <p class="intro-position">
+                    <span>Back-end Developer</span>
+                    <span>Cloud Enthusiast</span>
+                </p>
+
+                <div class="s-hero__content-social">
+                    <a href="https://github.com/mcmubby/acgc-azure-resume"><i class="fab fa-github"
+                            aria-hidden="true"></i></a>
+                    <a href="#0"><i class="fab fa-hashnode" aria-hidden="true"></i></a>
+                    <a href="www.linkedin.com/in/ayelotan-mubarak"><i class="fab fa-linkedin"
+                            aria-hidden="true"></i></a>
+                </div>
+
+            </div> <!-- end s-hero__content-about -->
+
+        </div>
+    </div> <!-- s-hero__content -->
+
+    <div class="s-hero__scroll">
+        <a href="#about" class="s-hero__scroll-link smoothscroll">
+            <span class="scroll-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:">
+                    <path
+                        d="M18.707 12.707L17.293 11.293 13 15.586 13 6 11 6 11 15.586 6.707 11.293 5.293 12.707 12 19.414z">
+                    </path>
+                </svg>
+            </span>
+            <span class="scroll-text">Scroll Down</span>
+        </a>
+    </div> <!-- s-hero__scroll -->
+
+</section> <!-- end s-hero -->
+
+
+<!-- about
+    ================================================== -->
+<section id="about" class="s-about ">
+
+    <div class="row">
+        <div class="column large-3 tab-12">
+            <img class="s-about__pic" src="~/images/header-bg-3000.jpg" alt="">
+        </div>
+        <div class="column large-9 tab-12 s-about__content">
+            <h3>About Me</h3>
+            <p>
+                Hi, I'm Mubarak .A, you're probably expecting to see a bunch of stuff about me.
+                I don't want to do that. If I did, by the time you're reading it, the information will be less accurate.
+                That's because I play around with a lot of things and the list builds up really fast!
+                <span>
+                    Safe to say I'm a nightly build &#128521;.
+                </span>
+            </p>
+
+            <hr>
+        </div>
+    </div> <!-- end row -->
+
+</section> <!-- end s-about -->
+
+
+<!-- resume
+    ================================================== -->
+<section id="resume" class="s-resume target-section">
+
+    <div class="row s-resume__section">
+        <div class="column large-3 tab-12">
+            <h3 class="section-header-allcaps">Career</h3>
+        </div>
+        <div class="column large-9 tab-12">
+            <div class="resume-block">
+
+                <div class="resume-block__header">
+                    <h4 class="h3">CodeNest</h4>
+                    <p class="resume-block__header-meta">
+                        <span>Software Developer (Intern)</span>
+                        <span class="resume-block__header-date">
+                            April 2021 - Present
+                        </span>
+                    </p>
+                </div>
+
+                <p>
+                    <li>Backend .Net development</li>
+                </p>
+
+            </div>
+
+            <div class="resume-block">
+
+                <div class="resume-block__header">
+                    <h4 class="h3">Prioclen</h4>
+                    <p class="resume-block__header-meta">
+                        <span>Tech Support</span>
+                        <span class="resume-block__header-date">
+                            July 2019 - February 2021
+                        </span>
+                    </p>
+                </div>
+
+                <p>
+                    <li>Installation and configuration of hardware and software solutions;</li>
+                    <li>Responsible for verifying equipment specifications as part of the procurement team;</li>
+                    <li>Managing existing systems;</li>
+                    <li>Lead, brand design and publications team.</li>
+                </p>
+
+            </div>
+        </div>
+    </div> <!-- s-resume__section -->
+
+
+    <div class="row s-resume__section">
+        <div class="column large-3 tab-12">
+            <h3 class="section-header-allcaps">CERTIFICATION</h3>
+        </div>
+        <div class="column large-9 tab-12">
+            <div class="resume-block">
+
+                <div class="resume-block__header">
+                    <h4 class="h3">Azure Fundamentals AZ-900</h4>
+                    <p class="resume-block__header-meta">
+                        <span class="resume-block__header-date">
+                            November 2020
+                        </span>
+                    </p>
+                </div>
+            </div> <!-- end resume-block -->
+        </div>
+    </div>
+</section> <!-- end s-resume -->
+
+<section id="contact" class="s-contact target-section">
+
+    <div class="row s-contact__header">
+        <div class="column large-12">
+            <h3 class="section-header-allcaps">Say Hello</h3>
+        </div>
+    </div>
+
+    <div class="row s-contact__content">
+
+        <div class="column large-7 medium-12">
+
+            <h4 class="huge-text">
+                Have a new project in mind? Let's collaborate and build something awesome.
+                Let's turn that idea to an even greater product :)
+            </h4>
+
+        </div>
+
+        <div class="column large-4 medium-12">
+
+            <div class="row contact-infos">
+                <form asp-action="Index" asp-controller="Home" method="POST" class="column large-12">
+                    <div asp-validation-summary="All" style="color: red;"></div>
+                    <div class="column large-12">
+                        <div class="contact-block">
+                            <h5 class="contact-block__header" style="color: white;">
+                                Email Address
+                            </h5>
+                            <input asp-for="Email" type="email" class="form-control contact-block__content"aria-describedby="emailHelp"
+                            placeholder="Enter email" style="color: white; width: 100%; border-width: 0.5; border-color: white;" required>
+                        </div> <!-- end contact-block -->
+                    </div>
+                    <div class="column large-12">
+                        <div class="contact-block">
+                            <h5 class="contact-block__header" style="color: white;">
+                                Name
+                            </h5>
+                            <input asp-for="Name" type="text" class="form-control contact-block__content" required style="border-width: 0.5; color: white; width: 100%; border-color: white; " placeholder="Enter fullname">
+                        </div> <!-- end contact-block -->
+                    </div>
+                    <div class="column large-12">
+                        <div class="contact-block">
+                            <h5 class="contact-block__header" style="color: white;">
+                                Describe your idea!
+                            </h5>
+                            <textarea asp-for="Idea" class="form-control" required id="exampleFormControlTextarea1" rows="3" maxlength="250" style="border-width: 0.5; color: white; width: 100%; border-color: white;"></textarea>
+                        </div> <!-- end contact-block -->
+                    </div>
+                    
+                    <div class="column large-12">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Share</button>
+                    </div>
+                </form>
+            </div> <!-- end contact-infos -->
+
+        </div>
+    </div> <!-- s-contact__content -->
+
+</section>
+
+
+
+
+<!-- Java Script
+    ================================================== -->
+<script src="~/js/plugins.js"></script>
+<script src="~/js/main.js"></script>
