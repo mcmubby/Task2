@@ -56,7 +56,7 @@ sudo dotnet restore
 sudo dotnet publish -c Release -o resumeapp
 
 ##copy published app (not necessary)
-sudo cp ~/Task2-main/Backend/Resume/resumeapp /var/www/
+sudo cp -r ~/Task2-main/Backend/Resume/resumeapp /var/www/
 
 ##copy service file for application
 echo "###Configuration of Application Service"
