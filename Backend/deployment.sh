@@ -1,6 +1,19 @@
 #!/bin/bash
 ##Deployment on fresh Ubuntu 16.04 Server
 
+##This part is done manually via (I will probably find a way around this later)
+##Download source code from repository
+##sudo wget https://github.com/{GITHUB_USERNAME}/{REPOSITORY_NAME}/archive/{BRANCH}/{REPOSITORY_NAME}.zip
+##sudo wget https://github.com/mcmubby/Task2/archive/main/Task2.zip
+
+##Install Unzip
+##sudo apt install unzip
+
+##Unzip downloaded repo
+##sudo unzip {REPOSITORY_NAME}.zip
+##This will be unzipped to {REPOSITORY_NAME}-{BRANCH} folder
+##sudo unzip Task2.zip
+
 ##Add Microsoft to package repository
 wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
@@ -18,17 +31,6 @@ sudo apt-get update; \
 ##  sudo apt-get update && \
 ##  sudo apt-get install -y aspnetcore-runtime-5.0
 
-##Download source code from repository
-##sudo wget https://github.com/{GITHUB_USERNAME}/{REPOSITORY_NAME}/archive/{BRANCH}/{REPOSITORY_NAME}.zip
-sudo wget https://github.com/mcmubby/Task2/archive/main/Task2.zip
-
-##Install Unzip
-sudo apt install unzip
-
-##Unzip downloaded repo
-##sudo unzip {REPOSITORY_NAME}.zip
-##This will be unzipped to {REPOSITORY_NAME}-{BRANCH} folder
-sudo unzip Task2.zip
 
 ##Install Nginx
 sudo apt-get install -y nginx
