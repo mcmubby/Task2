@@ -20,6 +20,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
 
 ##Install .NET SDK (currently using .NET5.0)
+echo "###Installing dotnet sdk 5.0"
 sudo apt-get update; \
   sudo apt-get install -y apt-transport-https && \
   sudo apt-get update && \
@@ -33,10 +34,12 @@ sudo apt-get update; \
 
 
 ##Install Nginx
+echo "###Installing Nginx"
 sudo apt-get install -y nginx
 sudo service nginx start
 
 ##Backup site-available/default
+echo "###Configuring Nginx"
 sudo mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 
 ##Copy default from repository folder
@@ -47,6 +50,7 @@ sudo nginx -t
 sudo nginx -s reload
 
 ##Publish application
+echo "###Restoring and Publishing application"
 cd Task2-main/Backend/Resume
 sudo dotnet restore
 sudo dotnet publish -c Release -o resumeapp
@@ -55,8 +59,10 @@ sudo dotnet publish -c Release -o resumeapp
 sudo cp Task2-main/Backend/Resume/resumeapp /var/www/
 
 ##copy service file for application
+echo "###Configuration of Application Service"
 sudo cp Task2-main/Backend/resumeapp.service /etc/systemd/system/resumeapp.service
 
 ##Enable and start service
-sudo systemctl enable my-web-api.service
-sudo systemctl start my-web-api.service
+echo "###Enabling and Starting App Service"
+sudo systemctl enable resumeapp.service
+sudo systemctl start resumeapp.service
