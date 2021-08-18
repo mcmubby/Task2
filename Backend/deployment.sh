@@ -56,11 +56,11 @@ sudo dotnet restore
 sudo dotnet publish -c Release -o resumeapp
 
 ##copy published app (not necessary)
-sudo cp Task2-main/Backend/Resume/resumeapp /var/www/
+sudo cp ~/Task2-main/Backend/Resume/resumeapp /var/www/
 
 ##copy service file for application
 echo "###Configuration of Application Service"
-sudo cp Task2-main/Backend/resumeapp.service /etc/systemd/system/resumeapp.service
+sudo cp ~/Task2-main/Backend/resumeapp.service /etc/systemd/system/resumeapp.service
 
 ##Enable and start service
 echo "###Enabling and Starting App Service"
