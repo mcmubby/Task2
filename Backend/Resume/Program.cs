@@ -1,3 +1,4 @@
+using System.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,10 @@ namespace Resume
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    //Override 5001 & 5000 since https is not configured on nginx
+                    webBuilder.UseKestrel(options =>{
+                        options.Listen(IPAddress.Loopback, 5000);
+                    });
                     webBuilder.UseStartup<Startup>();
                 });
     }
