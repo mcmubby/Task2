@@ -22,10 +22,11 @@ namespace Resume
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     //Override 5001 & 5000 since https is not configured on nginx
-                    webBuilder.UseKestrel(options =>{
-                        options.Listen(IPAddress.Loopback, 5000);
-                    });
+                    // webBuilder.UseKestrel(options =>{
+                    //     options.Listen(IPAddress.Loopback, 5000);
+                    // });
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("http://*:" + Environment.GetEnvironmentVariable("PORT"));
                 });
     }
 }
